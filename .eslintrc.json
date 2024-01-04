@@ -1,0 +1,28 @@
+{
+    "env": {
+        "es2021": true,
+        "node": true
+    },
+    "extends": ["plugin:react/recommended", "standard-with-typescript"],
+    "overrides": [],
+    "parserOptions": {
+        "ecmaVersion": "latest",
+        "sourceType": "module"
+    },
+    "plugins": ["react"],
+    "rules": {
+        // ダブルクォーテーションのみ許可
+        "quotes": ["error", "double"],
+        "@typescript-eslint/quotes": ["error", "double"],
+        // セミコロンは必ず付ける
+        "semi": ["error", "always"],
+        "@typescript-eslint/semi": ["error", "always"],
+        // 最後の要素またはプロパティが最後のorと異なる行にある場合は末尾のコンマが必要で、最後の要素またはプロパティが最後のorと同じ行にある場合は末尾のコンマを許可しない
+        "comma-dangle": ["error", "always-multiline"],
+        "@typescript-eslint/comma-dangle": ["error", "always-multiline"],
+        // React17以降の新しいJSX変換を使用しているため無効化
+        "react/react-in-jsx-scope": 0,
+        // インデント検知を無効化
+        "@typescript-eslint/indent": "off"
+    }
+}
