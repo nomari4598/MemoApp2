@@ -5,7 +5,8 @@ import { Hello } from "./src/components/Hello";
 const App = (): JSX.Element => {
     return (
         <View style={styles.container}>
-            <Hello>World</Hello>
+            <Hello bang>World</Hello>
+            <Hello style={styles.text}>World</Hello>
             <Text>Open up App.tsx to start working on your app!!!</Text>
             <StatusBar style="auto" />
         </View>
@@ -18,6 +19,9 @@ const styles = StyleSheet.create({
         backgroundColor: "#ffffff",
         alignItems: "center",
         justifyContent: "center",
+    },
+    text: {
+        fontSize: 16,
     },
 });
 

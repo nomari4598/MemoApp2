@@ -1,15 +1,21 @@
 import { StyleSheet, Text, View } from "react-native";
+import type { TextStyle } from "react-native";
 
 type HelloProps = {
+    bang?: boolean;
     children: string;
+    style?: TextStyle;
 };
 
 export const Hello = (props: HelloProps): JSX.Element => {
-    const { children } = props;
+    const { bang, children, style } = props;
 
     return (
         <View>
-            <Text style={styles.text}>Hello {children}</Text>
+            <Text style={[styles.text, style]}>
+                Hello {children}
+                {bang === true ? "!" : ""}
+            </Text>
         </View>
     );
 };
