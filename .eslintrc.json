@@ -22,8 +22,10 @@
         "semi": ["error", "always"],
         "@typescript-eslint/semi": ["error", "always"],
         // 最後の要素またはプロパティが最後のorと異なる行にある場合は末尾のコンマが必要で、最後の要素またはプロパティが最後のorと同じ行にある場合は末尾のコンマを許可しない
-        "comma-dangle": ["error", "always-multiline"],
-        "@typescript-eslint/comma-dangle": ["error", "always-multiline"],
+        // "comma-dangle": ["error", "always-multiline"],
+        // "@typescript-eslint/comma-dangle": ["error", "always-multiline"],
+        "comma-dangle": "off",
+        "@typescript-eslint/comma-dangle": "off",
         // React17以降の新しいJSX変換を使用しているため無効化
         "react/react-in-jsx-scope": 0,
         // インデント検知を無効化
