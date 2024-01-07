@@ -7,11 +7,17 @@ import {
 } from "react-native";
 import { Header } from "../../components/Header";
 import { SubmitButton } from "../../components/SubmitButton";
-import { Link } from "expo-router";
+import { Link, router } from "expo-router";
 
 const SignUp = (): JSX.Element => {
     const { container, inner, title, input, footer, footerLink, footerText } =
         styles;
+
+    const handlePress = (): void => {
+        // 会員登録
+        router.push("memo/List");
+    };
+
     return (
         <View style={container}>
             <Header />
@@ -19,7 +25,10 @@ const SignUp = (): JSX.Element => {
                 <Text style={title}>Sign Up</Text>
                 <TextInput style={input} value="Email address" />
                 <TextInput style={input} value="Password" />
-                <SubmitButton displayLabelValue="Submit" />
+                <SubmitButton
+                    displayLabelValue="Submit"
+                    onPress={handlePress}
+                />
                 <View style={footer}>
                     <Text style={footerText}>Already registered?</Text>
                     <Link href="auth/Login" asChild>
