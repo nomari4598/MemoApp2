@@ -1,17 +1,18 @@
-import { View, Text, StyleSheet } from "react-native";
+import { Text, StyleSheet, TouchableOpacity } from "react-native";
 
 type SubmitButtonProps = {
     displayLabelValue: string;
+    onPress?: () => void;
 };
 
 export const SubmitButton = (props: SubmitButtonProps): JSX.Element => {
-    const { displayLabelValue } = props;
+    const { displayLabelValue, onPress } = props;
     const { button, buttonLabel } = styles;
 
     return (
-        <View style={button}>
+        <TouchableOpacity style={button} onPress={onPress}>
             <Text style={buttonLabel}>{displayLabelValue}</Text>
-        </View>
+        </TouchableOpacity>
     );
 };
 
