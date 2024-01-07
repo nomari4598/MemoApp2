@@ -7,7 +7,7 @@ import { Redirect } from "expo-router";
  * @returns 画面構成の母体
  */
 const Index = (): JSX.Element => {
-    return <Redirect href="auth/SignUp" />;
+    return <Redirect href="memo/List" />;
 };
 
 export default Index;
