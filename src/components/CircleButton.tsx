@@ -1,7 +1,9 @@
 import { View, Text, StyleSheet } from "react-native";
+import type { ViewStyle } from "react-native";
 
 type CircleButtonProps = {
-    children: string;
+    children: JSX.Element;
+    viewStyle?: ViewStyle;
 };
 
 /**
@@ -10,11 +12,11 @@ type CircleButtonProps = {
  * @returns メモ登録ボタン
  */
 export const CircleButton = (props: CircleButtonProps): JSX.Element => {
-    const { children } = props;
+    const { children, viewStyle } = props;
     const { circleButton, circleButtonLabel } = styles;
 
     return (
-        <View style={circleButton}>
+        <View style={[circleButton, viewStyle]}>
             <Text style={circleButtonLabel}>{children}</Text>
         </View>
     );

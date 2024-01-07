@@ -1,7 +1,4 @@
-import { View, StyleSheet } from "react-native";
-import { Header } from "../components/Header";
-import { MemoListItem } from "../components/MemoListItem";
-import { CircleButton } from "../components/CircleButton";
+import { Redirect } from "expo-router";
 
 /**
  * 画面上に表示されるコンポーネントの母体
@@ -10,25 +7,7 @@ import { CircleButton } from "../components/CircleButton";
  * @returns 画面構成の母体
  */
 const Index = (): JSX.Element => {
-    return (
-        <View style={styles.container}>
-            <Header />
-            <View>
-                <MemoListItem />
-                <MemoListItem />
-                <MemoListItem />
-            </View>
-            <CircleButton>+</CircleButton>
-        </View>
-    );
+    return <Redirect href="memo/Detail" />;
 };
-
-// 高さ関連の数値はpx換算
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: "#ffffff",
-    },
-});
 
 export default Index;
