@@ -7,6 +7,7 @@ import {
 } from "react-native";
 import { Header } from "../../components/Header";
 import { SubmitButton } from "../../components/SubmitButton";
+import { Link } from "expo-router";
 
 const Login = (): JSX.Element => {
     const { container, inner, title, input, footer, footerLink, footerText } =
@@ -21,9 +22,12 @@ const Login = (): JSX.Element => {
                 <SubmitButton displayLabelValue="Submit" />
                 <View style={footer}>
                     <Text style={footerText}>Not registered?</Text>
-                    <TouchableOpacity>
-                        <Text style={footerLink}>Sign up here!</Text>
-                    </TouchableOpacity>
+                    {/* Linkタブに子要素を含めるためにはasChildが必須 */}
+                    <Link href="auth/SignUp" asChild>
+                        <TouchableOpacity>
+                            <Text style={footerLink}>Sign up here!</Text>
+                        </TouchableOpacity>
+                    </Link>
                 </View>
             </View>
         </View>

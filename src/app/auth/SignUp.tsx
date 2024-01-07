@@ -7,6 +7,7 @@ import {
 } from "react-native";
 import { Header } from "../../components/Header";
 import { SubmitButton } from "../../components/SubmitButton";
+import { Link } from "expo-router";
 
 const SignUp = (): JSX.Element => {
     const { container, inner, title, input, footer, footerLink, footerText } =
@@ -21,9 +22,11 @@ const SignUp = (): JSX.Element => {
                 <SubmitButton displayLabelValue="Submit" />
                 <View style={footer}>
                     <Text style={footerText}>Already registered?</Text>
-                    <TouchableOpacity>
-                        <Text style={footerLink}>Log In</Text>
-                    </TouchableOpacity>
+                    <Link href="auth/Login" asChild>
+                        <TouchableOpacity>
+                            <Text style={footerLink}>Log In</Text>
+                        </TouchableOpacity>
+                    </Link>
                 </View>
             </View>
         </View>
