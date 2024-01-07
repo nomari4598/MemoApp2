@@ -3,6 +3,7 @@ import { Header } from "../../components/Header";
 import { MemoListItem } from "../../components/MemoListItem";
 import { CircleButton } from "../../components/CircleButton";
 import { Icon } from "../../components/Icon";
+import { router } from "expo-router";
 
 /**
  * 画面上に表示されるコンポーネントの母体
@@ -11,6 +12,10 @@ import { Icon } from "../../components/Icon";
  * @returns 画面構成の母体
  */
 const List = (): JSX.Element => {
+    const handlePress = (): void => {
+        router.push("memo/Create");
+    };
+
     return (
         <View style={styles.container}>
             <Header />
@@ -19,7 +24,7 @@ const List = (): JSX.Element => {
                 <MemoListItem />
                 <MemoListItem />
             </View>
-            <CircleButton>
+            <CircleButton onPress={handlePress}>
                 <Icon iconName="plus" size={40} color="#ffffff" />
             </CircleButton>
         </View>

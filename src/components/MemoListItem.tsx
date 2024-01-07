@@ -1,5 +1,6 @@
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import { Icon } from "./Icon";
+import { Link } from "expo-router";
 
 /**
  * メモリスト内の要素
@@ -10,15 +11,17 @@ export const MemoListItem = (): JSX.Element => {
     const { memoListItem, memoListItemDate, memoListItemTitle } = styles;
 
     return (
-        <View style={memoListItem}>
-            <View>
-                <Text style={memoListItemTitle}>買い物リスト</Text>
-                <Text style={memoListItemDate}>2023年10月1日 10:00</Text>
-            </View>
-            <TouchableOpacity>
-                <Icon iconName="delete" size={30} color="#b0b0b0" />
+        <Link href={"memo/Detail"} asChild>
+            <TouchableOpacity style={memoListItem}>
+                <View>
+                    <Text style={memoListItemTitle}>買い物リスト</Text>
+                    <Text style={memoListItemDate}>2023年10月1日 10:00</Text>
+                </View>
+                <TouchableOpacity>
+                    <Icon iconName="delete" size={30} color="#b0b0b0" />
+                </TouchableOpacity>
             </TouchableOpacity>
-        </View>
+        </Link>
     );
 };
 

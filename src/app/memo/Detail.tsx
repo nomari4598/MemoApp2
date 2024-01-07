@@ -2,6 +2,7 @@ import { View, Text, ScrollView, StyleSheet } from "react-native";
 import { Header } from "../../components/Header";
 import { CircleButton } from "../../components/CircleButton";
 import { Icon } from "../../components/Icon";
+import { router } from "expo-router";
 
 const Detail = (): JSX.Element => {
     const {
@@ -13,6 +14,11 @@ const Detail = (): JSX.Element => {
         memoBodyText,
         circleButton,
     } = styles;
+
+    const handlePress = (): void => {
+        router.push("memo/Edit");
+    };
+
     return (
         <View style={container}>
             <Header />
@@ -28,7 +34,7 @@ const Detail = (): JSX.Element => {
                     </Text>
                 </ScrollView>
             </View>
-            <CircleButton viewStyle={circleButton}>
+            <CircleButton viewStyle={circleButton} onPress={handlePress}>
                 <Icon iconName="pencil" size={40} color="#ffffff" />
             </CircleButton>
         </View>

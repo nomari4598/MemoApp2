@@ -4,6 +4,7 @@ import type { ViewStyle } from "react-native";
 type CircleButtonProps = {
     children: JSX.Element;
     viewStyle?: ViewStyle;
+    onPress?: () => void;
 };
 
 /**
@@ -12,11 +13,11 @@ type CircleButtonProps = {
  * @returns メモ登録ボタン
  */
 export const CircleButton = (props: CircleButtonProps): JSX.Element => {
-    const { children, viewStyle } = props;
+    const { children, viewStyle, onPress } = props;
     const { circleButton, circleButtonLabel } = styles;
 
     return (
-        <TouchableOpacity style={[circleButton, viewStyle]}>
+        <TouchableOpacity style={[circleButton, viewStyle]} onPress={onPress}>
             <Text style={circleButtonLabel}>{children}</Text>
         </TouchableOpacity>
     );

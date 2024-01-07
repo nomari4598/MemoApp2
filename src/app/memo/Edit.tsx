@@ -7,9 +7,14 @@ import {
 import { Header } from "../../components/Header";
 import { CircleButton } from "../../components/CircleButton";
 import { Icon } from "../../components/Icon";
+import { router } from "expo-router";
 
 const Edit = (): JSX.Element => {
     const { container, input, inputContainer } = styles;
+
+    const handlePress = (): void => {
+        router.back();
+    };
 
     return (
         // KeyboardAvoidingView(iOS対応分)
@@ -19,7 +24,7 @@ const Edit = (): JSX.Element => {
                 {/* multiline追加(iOS対応分) */}
                 <TextInput multiline style={input} value="買い物リスト" />
             </View>
-            <CircleButton>
+            <CircleButton onPress={handlePress}>
                 <Icon iconName="check" size={40} color="#ffffff" />
             </CircleButton>
         </KeyboardAvoidingView>
