@@ -1,4 +1,4 @@
-import { Slot } from "expo-router";
+import { Stack } from "expo-router";
 
 /**
  * 使用媒体の画面に対して画面描画させるためのコンポーネント
@@ -7,7 +7,7 @@ import { Slot } from "expo-router";
  * @returns
  */
 const Layout = (): JSX.Element => {
-    return <Slot />;
+    return <Stack />;
 };
 
 export default Layout;
