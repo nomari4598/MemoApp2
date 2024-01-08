@@ -7,10 +7,14 @@ import {
 } from "react-native";
 import { SubmitButton } from "../../components/SubmitButton";
 import { Link, router } from "expo-router";
+import { useRef } from "react";
 
 const SignUp = (): JSX.Element => {
     const { container, inner, title, input, footer, footerLink, footerText } =
         styles;
+
+    const emailRef = useRef(null);
+    const passwordRef = useRef(null);
 
     const handlePress = (): void => {
         // 会員登録
@@ -21,14 +25,29 @@ const SignUp = (): JSX.Element => {
         <View style={container}>
             <View style={inner}>
                 <Text style={title}>Sign Up</Text>
-                <TextInput style={input} value="Email address" />
-                <TextInput style={input} value="Password" />
+                <TextInput
+                    style={input}
+                    ref={emailRef}
+                    autoCapitalize="none"
+                    keyboardType="email-address"
+                    placeholder="Email Address"
+                    textContentType="emailAddress"
+                />
+                <TextInput
+                    style={input}
+                    ref={passwordRef}
+                    autoCapitalize="none"
+                    secureTextEntry
+                    placeholder="Password"
+                    textContentType="password"
+                />
                 <SubmitButton
                     displayLabelValue="Submit"
                     onPress={handlePress}
                 />
                 <View style={footer}>
                     <Text style={footerText}>Already registered?</Text>
+                    {/* Linkタブに子要素を含めるためにはasChildが必須 */}
                     <Link href="auth/Login" asChild replace>
                         <TouchableOpacity>
                             <Text style={footerLink}>Log In</Text>
