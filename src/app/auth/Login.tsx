@@ -5,7 +5,6 @@ import {
     TextInput,
     TouchableOpacity,
 } from "react-native";
-import { Header } from "../../components/Header";
 import { SubmitButton } from "../../components/SubmitButton";
 import { Link, router } from "expo-router";
 
@@ -20,7 +19,6 @@ const Login = (): JSX.Element => {
 
     return (
         <View style={container}>
-            <Header />
             <View style={inner}>
                 <Text style={title}>Log In</Text>
                 <TextInput style={input} value="Email address" />

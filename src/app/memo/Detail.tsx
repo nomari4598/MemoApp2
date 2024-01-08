@@ -1,5 +1,4 @@
 import { View, Text, ScrollView, StyleSheet } from "react-native";
-import { Header } from "../../components/Header";
 import { CircleButton } from "../../components/CircleButton";
 import { Icon } from "../../components/Icon";
 import { router } from "expo-router";
@@ -21,7 +20,6 @@ const Detail = (): JSX.Element => {
 
     return (
         <View style={container}>
-            <Header />
             <View style={memoHeader}>
                 <Text style={memoTitle}>買い物リスト</Text>
                 <Text style={memoDate}>2023年10月1日 10:00</Text>
@@ -74,7 +72,7 @@ const styles = StyleSheet.create({
         color: "#000000",
     },
     circleButton: {
-        top: 160,
+        top: 60,
         bottom: "auto",
     },
 });

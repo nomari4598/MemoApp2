@@ -4,7 +4,6 @@ import {
     StyleSheet,
     KeyboardAvoidingView,
 } from "react-native";
-import { Header } from "../../components/Header";
 import { CircleButton } from "../../components/CircleButton";
 import { Icon } from "../../components/Icon";
 import { router } from "expo-router";
@@ -19,7 +18,6 @@ const Create = (): JSX.Element => {
     return (
         // KeyboardAvoidingView(iOS対応分)
         <KeyboardAvoidingView behavior="height" style={container}>
-            <Header />
             <View style={inputContainer}>
                 {/* multiline追加(iOS対応分) */}
                 <TextInput multiline style={input} value="" />
