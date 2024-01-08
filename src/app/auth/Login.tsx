@@ -14,7 +14,7 @@ const Login = (): JSX.Element => {
 
     const handlePress = (): void => {
         // ログイン処理
-        router.push("memo/List");
+        router.replace("memo/List");
     };
 
     return (
@@ -30,7 +30,7 @@ const Login = (): JSX.Element => {
                 <View style={footer}>
                     <Text style={footerText}>Not registered?</Text>
                     {/* Linkタブに子要素を含めるためにはasChildが必須 */}
-                    <Link href="auth/SignUp" asChild>
+                    <Link href="auth/SignUp" asChild replace>
                         <TouchableOpacity>
                             <Text style={footerLink}>Sign up here!</Text>
                         </TouchableOpacity>
